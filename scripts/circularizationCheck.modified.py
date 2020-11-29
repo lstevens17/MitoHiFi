@@ -54,7 +54,7 @@ def circularizationCheck(resultFile, circularSize, circularOffSet):
 		
 	print( "Running blast of input against itself to check for circularization...")
 
-	with open("circularization_check.blast.xml",'w') as blastResultFile:
+	with open(sys.argv[1] + "_circularization_check.blast.xml",'w') as blastResultFile:
 #		if blastFolder == 'installed':
 #		command = "blastall -p blastn -d " + resultFile + " -i " + resultFile + " -m 7" #call BLAST with XML output
 #		else:
@@ -86,7 +86,7 @@ def circularizationCheck(resultFile, circularSize, circularOffSet):
 	return (str(id),False,-1,-1)
 #dirpath = os.getcwd()
 #outfile = os.path.join(dirpath, 'circularizationCheck.out')
-output=open('circularisationCheck.txt', 'w')
+output=open(sys.argv[1] + '_circularizationCheck.txt', 'w')
 if __name__ == '__main__':
 	if sys.argv[1] == '-h' or sys.argv[1] == '--help':
 		print( 'Usage: fasta_file')
