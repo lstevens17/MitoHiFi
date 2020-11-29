@@ -63,7 +63,7 @@ def circularizationCheck(resultFile, circularSize, circularOffSet):
 		blastAll = Popen(args, stdout=blastResultFile)
 		blastAll.wait()
 
-	blastparse = SearchIO.parse('circularization_check.blast.xml', 'blast-xml') #get all queries
+	blastparse = SearchIO.parse(sys.argv[1] + '_circularization_check.blast.xml', 'blast-xml') #get all queries
 
 	'''
 	Let's loop through all blast results and see if there is a circularization.
