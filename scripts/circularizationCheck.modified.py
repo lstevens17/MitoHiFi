@@ -26,7 +26,6 @@ SOFTWARE.
 '''
 
 from Bio import SeqIO, SearchIO
-from Bio.Alphabet import generic_dna, generic_protein
 from subprocess import Popen
 import shlex, sys, os
 
@@ -35,7 +34,7 @@ def circularizationCheck(resultFile, circularSize, circularOffSet):
 	Check, with blast, if there is a match between the start and the end of a sequence.
 	Returns a tuple with (True, start, end) or False, accordingly.
 	'''
-	refSeq = SeqIO.read(resultFile, "fasta", generic_dna)
+	refSeq = SeqIO.read(resultFile, "fasta")
 	sizeOfSeq = len(refSeq)
 	id = refSeq.id
 	print( "Formatting database for blast (circularization check)...")
